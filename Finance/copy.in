@@ -72,6 +72,6 @@ copy finance(
 	month_number= c0tab with null(']^NULL^['),
 	month_name= varchar(0)tab with null(']^NULL^['),
 	year= varchar(0)nl with null(']^NULL^['))
-from 'D:\Finance\finance.ssahu'
+from 'finance.ssahu'
 with row_estimate = 199
 \p\g
