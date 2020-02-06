@@ -12,6 +12,6 @@ PowerBI Automation script to update connection string using Python
  
 ## Import Finance Data :
  1. Clone the repository and open Vector/Ingres CLI.
- 2. cd "path to Finance folder from repo"
+ 2. cd "local repo path/Finance"
  3. createdb financedb
  3. sql financedb < copy.in
