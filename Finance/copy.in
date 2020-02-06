@@ -1,0 +1,77 @@
+
+/* SQL script created by COPYDB, version VW 5.1.0 (a64.win/456). */
+
+\sql
+set autocommit on
+\p\g
+set nojournaling
+\p\g
+\sql
+set session with privileges=all
+\p\g
+set session collation none
+\p\g
+set session unicode_collation none
+\p\g
+set float_format 'f4G79.38'
+\p\g
+set float_format 'f8G79.38'
+\p\g
+set decimal '.'
+\p\g
+set date_format 'us'
+\p\g
+set money_format 'L:$'
+\p\g
+set money_prec '2'
+\p\g
+set nocreate_compression
+\p\g
+\nocontinue
+
+	/* TABLES */
+create table finance(
+	segment varchar(50) collate ucs_basic,
+	country varchar(50) collate ucs_basic,
+	product varchar(50) collate ucs_basic,
+	discount_band varchar(10) collate ucs_basic,
+	units_sold float,
+	manufacturing_price float,
+	sale_price float,
+	gross_sales float,
+	discounts float,
+	sales float,
+	cogs float,
+	profit float,
+	date ansidate,
+	month_number integer,
+	month_name varchar(15) collate ucs_basic,
+	year varchar(10) collate ucs_basic
+)
+with structure=x100,
+location = (ii_database),
+nopartition
+\p\g
+set journaling on finance
+\p\g
+
+copy finance(
+	segment= varchar(0)tab with null(']^NULL^['),
+	country= varchar(0)tab with null(']^NULL^['),
+	product= varchar(0)tab with null(']^NULL^['),
+	discount_band= varchar(0)tab with null(']^NULL^['),
+	units_sold= c0tab with null(']^NULL^['),
+	manufacturing_price= c0tab with null(']^NULL^['),
+	sale_price= c0tab with null(']^NULL^['),
+	gross_sales= c0tab with null(']^NULL^['),
+	discounts= c0tab with null(']^NULL^['),
+	sales= c0tab with null(']^NULL^['),
+	cogs= c0tab with null(']^NULL^['),
+	profit= c0tab with null(']^NULL^['),
+	date= c0tab with null(']^NULL^['),
+	month_number= c0tab with null(']^NULL^['),
+	month_name= varchar(0)tab with null(']^NULL^['),
+	year= varchar(0)nl with null(']^NULL^['))
+from 'D:\Finance\finance.ssahu'
+with row_estimate = 199
+\p\g

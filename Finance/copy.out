@@ -1,0 +1,130 @@
+
+/* SQL script created by COPYDB, version VW 5.1.0 (a64.win/456). */
+
+\sql
+set autocommit on
+\p\g
+set lockmode session where readlock=nolock
+\p\g
+\sql
+set session with privileges=all
+\p\g
+set float_format 'f4G79.38'
+\p\g
+set float_format 'f8G79.38'
+\p\g
+set decimal '.'
+\p\g
+set date_format 'us'
+\p\g
+set money_format 'L:$'
+\p\g
+set money_prec '2'
+\p\g
+copy "Calcs"(
+	"key"= varchar(0)tab with null(']^NULL^['),
+	num0= c0tab with null(']^NULL^['),
+	num1= c0tab with null(']^NULL^['),
+	num2= c0tab with null(']^NULL^['),
+	num3= c0tab with null(']^NULL^['),
+	num4= c0tab with null(']^NULL^['),
+	str0= varchar(0)tab with null(']^NULL^['),
+	str1= varchar(0)tab with null(']^NULL^['),
+	str2= varchar(0)tab with null(']^NULL^['),
+	str3= varchar(0)tab with null(']^NULL^['),
+	int0= c0tab with null(']^NULL^['),
+	int1= c0tab with null(']^NULL^['),
+	int2= c0tab with null(']^NULL^['),
+	int3= c0tab with null(']^NULL^['),
+	bool0= c0tab with null(']^NULL^['),
+	bool1= c0tab with null(']^NULL^['),
+	bool2= c0tab with null(']^NULL^['),
+	bool3= c0tab with null(']^NULL^['),
+	date0= c0tab with null(']^NULL^['),
+	date1= c0tab with null(']^NULL^['),
+	date2= c0tab with null(']^NULL^['),
+	date3= c0tab with null(']^NULL^['),
+	time0= c0tab with null(']^NULL^['),
+	time1= c0tab with null(']^NULL^['),
+	datetime0= c0tab with null(']^NULL^['),
+	datetime1= varchar(0)tab with null(']^NULL^['),
+	zzz= varchar(0)nl with null(']^NULL^['))
+into 'D:\Finance\calcs.ssahu'
+\p\g
+copy "Staples"(
+	"Item Count"= c0tab,
+	"Ship Priority"= varchar(0)tab,
+	"Order Priority"= varchar(0)tab,
+	"Order Status"= varchar(0)tab,
+	"Order Quantity"= c0tab,
+	"Sales Total"= c0tab,
+	"Discount"= c0tab,
+	"Tax Rate"= c0tab,
+	"Ship Mode"= varchar(0)tab,
+	"Fill Time"= c0tab,
+	"Gross Profit"= c0tab,
+	"Price"= varchar(0)tab,
+	"Ship Handle Cost"= varchar(0)tab,
+	"Employee Name"= varchar(0)tab,
+	"Employee Dept"= varchar(0)tab,
+	"Manager Name"= varchar(0)tab,
+	"Employee Yrs Exp"= c0tab,
+	"Employee Salary"= varchar(0)tab,
+	"Customer Name"= varchar(0)tab,
+	"Customer State"= varchar(0)tab,
+	"Call Center Region"= varchar(0)tab,
+	"Customer Balance"= c0tab,
+	"Customer Segment"= varchar(0)tab,
+	"Prod Type1"= varchar(0)tab,
+	"Prod Type2"= varchar(0)tab,
+	"Prod Type3"= varchar(0)tab,
+	"Prod Type4"= varchar(0)tab,
+	"Product Name"= varchar(0)tab,
+	"Product Container"= varchar(0)tab,
+	"Ship Promo"= varchar(0)tab,
+	"Supplier Name"= varchar(0)tab,
+	"Supplier Balance"= c0tab,
+	"Supplier Region"= varchar(0)tab,
+	"Supplier State"= varchar(0)tab,
+	"Order ID"= varchar(0)tab,
+	"Order Year"= c0tab,
+	"Order Month"= c0tab,
+	"Order Day"= c0tab,
+	"Order Date"= c0tab,
+	"Order Quarter"= varchar(0)tab,
+	"Product Base Margin"= c0tab,
+	"Product ID"= varchar(0)tab,
+	"Receive Time"= c0tab,
+	"Received Date"= c0tab,
+	"Ship Date"= c0tab,
+	"Ship Charge"= varchar(0)tab,
+	"Total Cycle Time"= c0tab,
+	"Product In Stock"= varchar(0)tab,
+	"PID"= c0tab,
+	"Market Segment"= varchar(0)nl)
+into 'D:\Finance\staples.ssahu'
+\p\g
+copy finance(
+	segment= varchar(0)tab with null(']^NULL^['),
+	country= varchar(0)tab with null(']^NULL^['),
+	product= varchar(0)tab with null(']^NULL^['),
+	discount_band= varchar(0)tab with null(']^NULL^['),
+	units_sold= c0tab with null(']^NULL^['),
+	manufacturing_price= c0tab with null(']^NULL^['),
+	sale_price= c0tab with null(']^NULL^['),
+	gross_sales= c0tab with null(']^NULL^['),
+	discounts= c0tab with null(']^NULL^['),
+	sales= c0tab with null(']^NULL^['),
+	cogs= c0tab with null(']^NULL^['),
+	profit= c0tab with null(']^NULL^['),
+	date= c0tab with null(']^NULL^['),
+	month_number= c0tab with null(']^NULL^['),
+	month_name= varchar(0)tab with null(']^NULL^['),
+	year= varchar(0)nl with null(']^NULL^['))
+into 'D:\Finance\finance.ssahu'
+\p\g
+copy "max"(
+	d1= varchar(0)tab with null(']^NULL^['),
+	big= c0nl with null(']^NULL^['))
+into 'D:\Finance\max.ssahu'
+\p\g
