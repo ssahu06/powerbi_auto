@@ -1,0 +1,13 @@
+﻿Dashboard,Connection String
+C:\Users\ssahu\Desktop\Power BI\My Visualisations\Finance_Visualisation.pbix,"let
+    Source = Actian.X100.SqlODBC.Contents(""@ssahu-xps,tcp_ip,VW"", ""powerbi""),
+    ssahu_Schema = Source{[Name=""ssahu"",Kind=""Schema""]}[Data],
+    finance_Table = ssahu_Schema{[Name=""finance"",Kind=""Table""]}[Data]
+in
+    finance_Table"
+C:\Users\ssahu\Desktop\Power BI\My Visualisations\TimeIntelligence_Testing.pbix,"let
+    Source = Actian.X100.SqlODBC.Contents(""@ssahu-xps,tcp_ip,VW"", ""powerbi""),
+    ssahu_Schema = Source{[Name=""ssahu"",Kind=""Schema""]}[Data],
+    finance_Table = ssahu_Schema{[Name=""finance"",Kind=""Table""]}[Data]
+in
+    finance_Table"
