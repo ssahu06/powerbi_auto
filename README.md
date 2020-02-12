@@ -3,7 +3,7 @@ PowerBI Automation script to update connection string using Python
 
 ## Pre Requisites :-
  1. PowerBI desktop installed with singed in using any email account.
- 2. Finance Visualisation and finance database in local.
+ 2. PowerBI visualisation and required database to connect.
  3. Python installed with required packages used in script.
   
 ## How to Run :
