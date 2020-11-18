@@ -1,6 +1,5 @@
 import csv
 import os
-import psutil
 import time
 
 import pyautogui
@@ -9,13 +8,9 @@ from pywinauto.application import Application
 print("1. Closing all background running PowerBI instances")
 # Kill running PBI
 PROCNAME = "PBIDesktop.exe"
-for proc in psutil.process_iter():
-    # check whether the process name matches
-    if proc.name() == PROCNAME:
-        proc.kill()
 i = 0
 # Opening Connection csv
-f = open(r'..\Path\PowerBI_Input.csv')  # Update csv path and connection same as PowerBI_Input.csv
+f = open(r'C:\Users\ssahu\Desktop\PowerBI_auto\PowerBI_Input.csv')  # Update csv path and connection same as PowerBI_Input.csv
 csv_f = csv.reader(f)
 
 for row in csv_f:
@@ -34,18 +29,34 @@ for row in csv_f:
 
         time.sleep(10)
         # print(pyautogui.position())
-        pyautogui.hotkey('alt', 'tab')
+        pyautogui.hotkey('ctrl', 'f6')
         time.sleep(1)
-        pyautogui.hotkey('alt', 'tab')
+        pyautogui.hotkey('ctrl', 'f6')
         time.sleep(1)
-        pyautogui.hotkey('alt', 'h')
-        # pyautogui.hotkey('h')
+        pyautogui.hotkey('tab')
         time.sleep(1)
-        pyautogui.hotkey('q')
+        pyautogui.hotkey('tab')
         time.sleep(1)
-        pyautogui.keyDown('down')
+        pyautogui.hotkey('right')
         time.sleep(1)
-        pyautogui.keyDown('up')
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
         pyautogui.hotkey('enter')
         time.sleep(4)
         pyautogui.hotkey('alt', 'h')
@@ -58,7 +69,7 @@ for row in csv_f:
         pyautogui.hotkey('del')
         print("3. Deleted Old connection details in advanced Editor")
         temp = col[1]
-        pyautogui.write(temp, interval=0.06)
+        pyautogui.write(temp, interval=0.07)
         time.sleep(1)
 
         # Saving new connection string
@@ -73,9 +84,11 @@ for row in csv_f:
         time.sleep(1)
         pyautogui.hotkey('enter')
 
+
         # Close and Apply
         pyautogui.hotkey('alt', 'h')
         pyautogui.hotkey('c')
+
         time.sleep(1)
         pyautogui.hotkey('enter')
         win.set_focus()
@@ -83,13 +96,5 @@ for row in csv_f:
 
         # Refresh
         print("6. Refreshing")
-        pyautogui.hotkey('alt', 'h')
-        time.sleep(1)
-        pyautogui.hotkey('r')
-        time.sleep(3)
-        pyautogui.hotkey('alt', 'f4')
-        time.sleep(2)
+        pyautogui.hotkey('right')
         pyautogui.hotkey('enter')
-        time.sleep(1)
-        win.close()
-        time.sleep(3)
