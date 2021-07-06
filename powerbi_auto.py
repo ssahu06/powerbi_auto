@@ -1,15 +1,21 @@
 import csv
 import os
 import time
-
+import psutil as psutil
 import pyautogui
 from pywinauto.application import Application
 
 print("1. Closing all background running PowerBI instances")
 # Kill running PBI
 PROCNAME = "PBIDesktop.exe"
+for proc in psutil.process_iter():
+    # check whether the process name matches
+    if proc.name() == PROCNAME:
+        proc.kill()
+
 i = 0
 # Opening Connection csv
+
 f = open(r'C:\Users\ssahu\Desktop\PowerBI_auto\PowerBI_Input.csv')  # Update csv path and connection same as PowerBI_Input.csv
 csv_f = csv.reader(f)
 
@@ -24,11 +30,15 @@ for row in csv_f:
 
         app = Application(backend='uia').connect(path=PROCNAME)
         win = app.window(title_re='.*Power BI Desktop')
-        time.sleep(10)
+        time.sleep(15)
         win.set_focus()
 
         time.sleep(10)
         # print(pyautogui.position())
+        pyautogui.hotkey('ctrl', 'f6')
+        time.sleep(1)
+        pyautogui.hotkey('ctrl', 'f6')
+        time.sleep(1)
         pyautogui.hotkey('ctrl', 'f6')
         time.sleep(1)
         pyautogui.hotkey('ctrl', 'f6')
@@ -39,6 +49,8 @@ for row in csv_f:
         time.sleep(1)
         pyautogui.hotkey('right')
         time.sleep(1)
+        pyautogui.hotkey('right')
+        time.sleep(.1)
         pyautogui.hotkey('right')
         time.sleep(.1)
         pyautogui.hotkey('right')
@@ -69,7 +81,7 @@ for row in csv_f:
         pyautogui.hotkey('del')
         print("3. Deleted Old connection details in advanced Editor")
         temp = col[1]
-        pyautogui.write(temp, interval=0.07)
+        pyautogui.write(temp, interval=0.08)
         time.sleep(1)
 
         # Saving new connection string
